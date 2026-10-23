@@ -1,0 +1,22 @@
+.sobre { max-width: 860px; padding: 16px 0 72px; }
+.sobre h1 { margin: 12px 0 16px; }
+.sobre .lead { font-size: 21px; color: var(--muted); margin: 0 0 28px; }
+.sobre h2 { font-size: 28px; margin: 44px 0 14px; }
+.sobre p { margin: 0 0 14px; font-size: 18px; }
+.aviso { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: 4px; padding: 16px 20px; margin: 0 0 8px; }
+.aviso p { margin: 0; font-size: 17px; }
+.tres { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+.tres div { background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 18px 20px; }
+.tres h3 { margin: 0 0 6px; font-size: 19px; }
+.tres p { margin: 0; color: var(--muted); font-size: 16px; }
+.estados { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.estados li { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; font-size: 17px; }
+.passos { padding-left: 22px; font-size: 18px; }
+.passos li { margin-bottom: 10px; }
+.sobre pre { background: #0e1214; color: #e9eef2; padding: 18px 20px; border-radius: 4px; overflow-x: auto; font-size: 14px; line-height: 1.6; margin: 18px 0; }
+.sobre code { font-family: ui-monospace, Consolas, monospace; }
+.sobre p code, .passos code { background: rgba(127,127,127,.16); padding: 1px 6px; border-radius: 3px; font-size: .88em; }
+.botoes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+.btn { display: inline-block; font-family: var(--sans); font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 4px; background: var(--green); color: #fff; }
+.btn.sec { background: transparent; color: var(--green-ink); border: 1px solid var(--green-ink); }
+.btn:hover { filter: brightness(1.15); }

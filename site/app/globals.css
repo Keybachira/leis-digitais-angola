@@ -1,0 +1,731 @@
+@import "tailwindcss";
+
+:root {
+    color-scheme: light dark;
+    --bg: #f7f6f2;
+    --card: #fdfcfa;
+    --field: #fff;
+    --ink: #12294a;
+    --muted: #5b6675;
+    --line: #dcdad2;
+    --navy: #16304f;
+    --green: #0d5a40;
+    --green-ink: #0d5a40;
+    --badge: #1f7550;
+    --tag-bg: #d9e4f1;
+    --tag-ink: #1e3a5f;
+    --gold: #f2b705;
+    --red: #cc092f;
+    --serif: var(--font-serif), Georgia, serif;
+    --sans: var(--font-sans), system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0e1214;
+        --card: #151b1e;
+        --field: #151b1e;
+        --ink: #e9eef2;
+        --muted: #9aa7b2;
+        --line: #2a3439;
+        --green-ink: #6fd3a3;
+        --tag-bg: #1f3350;
+        --tag-ink: #bcd3f0;
+    }
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+svg {
+    display: block;
+    flex: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* barra institucional */
+.gov {
+    background: var(--navy);
+    color: #fff;
+    padding-top: env(safe-area-inset-top, 0px);
+}
+
+.gov .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    gap: 16px;
+}
+
+.gov .id {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    min-width: 0;
+}
+
+.gov .id b {
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.gov .id i {
+    width: 1px;
+    height: 16px;
+    background: rgba(255, 255, 255, .5);
+}
+
+.gov .id span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bandeira {
+    display: flex;
+    position: relative;
+
+}
+
+.bandeira img {
+    width: 40px;
+    height: 26px;
+}
+
+
+.gov nav {
+    display: flex;
+    gap: 32px;
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.gov nav a {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid transparent;
+}
+
+.gov nav a.on {
+    border-bottom-color: var(--gold);
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 26px 0 8px;
+    color: var(--green-ink);
+}
+
+.brand img {
+    width: 80px;
+    height: 80px;
+}
+
+.brand b {
+    font-size: 19px;
+    line-height: 1.15;
+    letter-spacing: .01em;
+    text-transform: uppercase;
+}
+
+/* hero */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 56px;
+    align-items: start;
+    padding: 20px 0 48px;
+    border-bottom: 1px solid var(--line);
+}
+
+h1 {
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.08;
+    margin: 0 0 20px;
+    font-weight: 700;
+    letter-spacing: -.01em;
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 19px;
+    margin: 0;
+    max-width: 420px;
+}
+
+.busca {
+    display: flex;
+    margin-top: 12px;
+}
+
+.campo {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--field);
+    border: 1px solid var(--line);
+    border-right: 0;
+    border-radius: 4px 0 0 4px;
+    padding: 0 18px;
+    color: var(--muted);
+}
+
+.campo:focus-within {
+    outline: 2px solid var(--green);
+    outline-offset: -2px;
+}
+
+.campo input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    background: none;
+    outline: 0;
+    font: inherit;
+    font-size: 18px;
+    color: var(--ink);
+    padding: 18px 0;
+}
+
+.busca button {
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 600;
+    color: #fff;
+    background: var(--green);
+    border: 0;
+    border-radius: 0 4px 4px 0;
+    padding: 0 34px;
+    cursor: pointer;
+}
+
+.busca button:hover {
+    filter: brightness(1.15);
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-between;
+    margin-top: 34px;
+}
+
+.st {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 24px;
+    border-left: 1px solid var(--line);
+    color: var(--green-ink);
+}
+
+.st:first-child {
+    padding-left: 0;
+    border-left: 0;
+}
+
+.st b {
+    display: block;
+    font-size: 30px;
+    line-height: 1;
+    color: var(--ink);
+}
+
+.st small {
+    font-size: 16px;
+    color: var(--muted);
+}
+
+.st .dt {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    display: block;
+    line-height: 1.2;
+}
+
+/* lista */
+h2 {
+    font-size: 34px;
+    margin: 40px 0 22px;
+    font-weight: 700;
+}
+
+h2 small {
+    font-size: 19px;
+    font-weight: 400;
+    color: var(--muted);
+}
+
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 12px;
+    margin-bottom: 28px;
+    font-family: var(--sans);
+}
+
+.grp {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.grp > span {
+    font-weight: 700;
+    font-size: 15px;
+    margin-right: 2px;
+}
+
+.sep {
+    width: 1px;
+    height: 34px;
+    background: var(--line);
+    margin: 0 14px;
+}
+
+.pill {
+    font: inherit;
+    font-size: 14px;
+    color: var(--ink);
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 9px 20px;
+    cursor: pointer;
+}
+
+.pill:hover {
+    border-color: var(--green);
+}
+
+.pill.on {
+    background: var(--green);
+    border-color: var(--green);
+    color: #fff;
+    font-weight: 600;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    padding-bottom: 64px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 20px 22px 16px;
+}
+
+.card:hover {
+    border-color: var(--green);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .08);
+}
+
+.tag {
+    display: inline-block;
+    align-self: flex-start;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 600;
+    background: var(--tag-bg);
+    color: var(--tag-ink);
+    padding: 2px 10px;
+    border-radius: 4px;
+}
+
+.card h3 {
+    font-size: 23px;
+    line-height: 1.22;
+    margin: 14px 0;
+    font-weight: 600;
+}
+
+.badge {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--badge);
+    padding: 6px 12px 6px 8px;
+    border-radius: 4px;
+}
+
+.badge.alterada {
+    background: #8a6a00;
+}
+
+.badge.revogada {
+    background: var(--red);
+}
+
+.meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 18px 0 14px;
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--muted);
+    flex-wrap: wrap;
+}
+
+.meta i {
+    font-style: normal;
+    opacity: .5;
+}
+
+.ver {
+    margin-top: auto;
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--green-ink);
+}
+
+.vazio {
+    grid-column: 1 / -1;
+    color: var(--muted);
+    font-size: 18px;
+    padding: 32px 0;
+}
+
+/* página de uma lei */
+.documento {
+    max-width: 780px;
+    padding: 16px 0 72px;
+}
+
+.voltar {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--green-ink);
+    margin-bottom: 20px;
+}
+
+.documento h1 {
+    margin: 16px 0;
+    font-size: clamp(30px, 4vw, 42px);
+}
+
+.ficha {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 20px;
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--muted);
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+}
+
+.ficha a {
+    color: var(--green-ink);
+    font-weight: 600;
+}
+
+.texto {
+    font-size: 18px;
+    margin-top: 28px;
+}
+
+.texto h2 {
+    font-size: 26px;
+    margin: 36px 0 12px;
+}
+
+.texto h3 {
+    font-size: 20px;
+    margin: 28px 0 8px;
+    color: var(--green-ink);
+}
+
+.texto p, .texto li {
+    margin: 0 0 12px;
+}
+
+footer {
+    background: rgba(127, 127, 127, .08);
+    border-top: 1px solid var(--line);
+    padding: 26px 24px calc(26px + env(safe-area-inset-bottom, 0px));
+    text-align: center;
+    font-family: var(--sans);
+    font-size: 12.5px;
+    color: var(--muted);
+}
+
+footer p {
+    margin: 0 auto 14px;
+    max-width: 720px;
+}
+
+footer .l {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+footer .l a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.mini {
+    width: 20px;
+    height: 12px;
+    background: linear-gradient(#cc092f 50%, #111 50%);
+    display: inline-block;
+}
+
+@media (max-width: 860px) {
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .gov nav {
+        gap: 16px;
+        font-size: 14px;
+    }
+
+    .gov .id span, .gov .id i {
+        display: none;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .st {
+        border-left: 0;
+        padding: 0;
+    }
+
+    .sep {
+        display: none;
+    }
+    .bandeira{
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* mobile: cabeçalho institucional empilhado */
+@media (max-width: 600px) {
+    .gov .wrap {
+        flex-direction: column;
+        height: auto;
+        padding: 12px 0;
+        gap: 10px;
+    }
+
+    .gov .id {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        font-size: 13px;
+    }
+
+    .gov .id b {
+        font-size: 14px;
+    }
+
+    .gov .id i {
+        display: none;
+    }
+
+    .gov .id .bandeira {
+        justify-content: center;
+        margin: 0 auto 6px;
+    }
+
+    .gov nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .gov nav a {
+        height: auto;
+        padding: 8px 0;
+        border-bottom: 0;
+        border-top: 1px solid rgba(255,255,255,.1);
+    }
+
+    .brand {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+        padding: 20px 0 12px;
+        margin: 0 auto;
+    }
+
+    .brand img {
+        width: 64px;
+        height: 64px;
+    }
+
+    .brand b {
+        font-size: 16px;
+    }
+
+    .hero {
+        padding: 16px 0 32px;
+    }
+
+    h1 {
+        font-size: clamp(28px, 10vw, 44px);
+    }
+
+    .hero p {
+        font-size: 17px;
+        max-width: none;
+    }
+
+    .busca {
+        flex-direction: column;
+    }
+
+    .campo {
+        border-radius: 4px;
+        border-right: 1px solid var(--line);
+        border-bottom: 0;
+    }
+
+    .busca button {
+        border-radius: 0 0 4px 4px;
+        width: 100%;
+        padding: 16px 0;
+        text-align: center;
+    }
+
+    .stats .st b {
+        font-size: 24px;
+    }
+
+    .stats .st small, .stats .st .dt {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 26px;
+        margin: 32px 0 18px;
+    }
+
+    .filtros {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .grp > span {
+        font-size: 14px;
+    }
+
+    .pill {
+        font-size: 13px;
+        padding: 8px 16px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 16px;
+    }
+
+    .card {
+        padding: 16px 18px 14px;
+    }
+
+    .card h3 {
+        font-size: 18px;
+    }
+
+    .documento {
+        padding: 12px 0 48px;
+    }
+
+    .documento h1 {
+        font-size: clamp(24px, 8vw, 34px);
+    }
+
+    .texto {
+        font-size: 16px;
+    }
+
+    footer {
+        font-size: 11px;
+        padding: 20px 16px calc(20px + env(safe-area-inset-bottom, 0px));
+    }
+
+    footer .l {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    footer .l a, footer .l span {
+        font-size: 12px;
+    }
+}

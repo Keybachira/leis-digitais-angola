@@ -1,0 +1,51 @@
+{
+  "actualizado_em": "2026-10-23",
+  "total": 3,
+  "leis": [
+    {
+      "slug": "redes-sistemas-informaticos-lei-7-17",
+      "tipo": "Lei",
+      "titulo": "Lei de Protecção das Redes e Sistemas Informáticos",
+      "numero": "Lei n.º 7/17",
+      "data_publicacao": "2017-02-16",
+      "estado": "em vigor",
+      "tema": [
+        "cibercriminalidade",
+        "segurança"
+      ],
+      "verificado_em": "2026-10-23",
+      "conteudo": "\n## Texto integral\n\n### Artigo 1.º\n\n(Inserir o texto oficial, copiado do Diário da República.)\n",
+      "ficheiro": "leis/redes-sistemas-informaticos-lei-7-17.md"
+    },
+    {
+      "slug": "comunicacoes-electronicas-lei-23-11",
+      "tipo": "Lei",
+      "titulo": "Lei das Comunicações Electrónicas e dos Serviços da Sociedade da Informação",
+      "numero": "Lei n.º 23/11",
+      "data_publicacao": "2011-06-20",
+      "estado": "em vigor",
+      "tema": [
+        "comunicações electrónicas",
+        "sociedade da informação"
+      ],
+      "verificado_em": "2026-10-23",
+      "conteudo": "\n## Texto integral\n\n### Artigo 1.º\n\n(Inserir o texto oficial, copiado do Diário da República.)\n",
+      "ficheiro": "leis/comunicacoes-electronicas-lei-23-11.md"
+    },
+    {
+      "slug": "protecao-dados-pessoais-lei-22-11",
+      "tipo": "Lei",
+      "titulo": "Lei de Protecção de Dados Pessoais",
+      "numero": "Lei n.º 22/11",
+      "data_publicacao": "2011-06-17",
+      "estado": "em vigor",
+      "tema": [
+        "protecção de dados",
+        "privacidade"
+      ],
+      "verificado_em": "2026-10-23",
+      "conteudo": "\n## Texto integral\n\n### Artigo 1.º\n\n(Inserir o texto oficial, copiado do Diário da República.)\n",
+      "ficheiro": "leis/protecao-dados-pessoais-lei-22-11.md"
+    }
+  ]
+}
